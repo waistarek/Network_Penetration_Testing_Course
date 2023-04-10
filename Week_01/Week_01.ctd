@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  <node name="Week_01" unique_id="1" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1678652222" ts_lastsave="1678652255">
+    <node name="Inductory Linux" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1678652255" ts_lastsave="1678652392">
+      <rich_text>1. commands
+   1) locate filename: this is used to find a file by its name in the data bank quickly(*/filename for the accurate file name).
+   2) </rich_text>
+    </node>
+  </node>
+</cherrytree>

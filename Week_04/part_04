@@ -1,0 +1,61 @@
+Note: Please only use the information learned in this course for ethical purposes.
+
+The five stages of hacking:
+1) Reconnaissance
+	-Passive vs. Active 
+Reconnaissance is information gathering.
+
+	-Passive Recon(Physical/Social)
+		-Location Information:
+			-Satellite images
+			-Drone recon
+			-Building layout(badge readers,break areas, security, 				fencing)
+		-Job Information:
+			-Employees(name, job title, phone number, manager, et				c,)
+			-Pictures(badge photos, desk photos, conputer photos, 				etc.)
+	-Passive Recon(Web/Host)
+		-Target Validation:
+			-WHOIS, nslookup, dnsrecon
+		-Finding Subdomains:
+			-Google Fu, dig, Nmap, Sublist3r, Bluto,crt.sh, etc.
+		-Fingerprinting:
+			-Nmap, Wappalyzer, WhatWeb, BuiltWith, Netcat.
+		-Data Breaches:
+			-HaveIBeenPwned and similar lists.
+we went to the website https://bugcrowd.com/programs to pick a company we are going to do OSINT(Open Source Intelligente) on.
+We picked tesla and went to website https://hunter.io/ and signed up with the aboadahm99@gmail.com to get information of the tesla, information like emails with the domain @tesla.com.
+Later we have gone to the website https://github.com/philipperemy/tensorflow-1.4-billion-password-analysis to look at dataset of passwords with their emails found in dark web.
+The content of the file parser.sh is shown to us which resides in the same folder where there is the 1.4_billion-password-analysis folder.
+I created the same file and typed the content into it.
+Than we talked about another tool to gather information about a company  like theHarvester.
+theHarvester is used to gather open source intelligence (OSINT) on a company or domain.
+command: theHarvester -d tesla.com -l 500 -b bing. 
+Than we have gone to the website https://haveibeenpwned.com/.
+is a website that allows Internet users to check whether their personal data has been compromised by data breaches.
+As example we put the following email todd@tesla.com on the search field of the website https://haveibeenpwned.com/.
+I have tried to install the program bluto with the command: pip install bluto, but it did not work.
+we visited the website https://crt.sh/ and put the %.tesla.com into the search field.
+crt.sh provides a searchable database of certificate transparency logs.CT Logs are a publicly auditable record of TLS/SSL certificate issuance by each Certificate Authority. Certificate Transparency is an Internet security standard and open source framework for monitoring and auditing digital certificates.
+Later we have added the program wappalyzer to firefox and then went to tesla.com and clicked on wappalyzer to get information of what tesla is running on its website like what program languages it is running.
+Then we used the command: whatweb -v tesla.com.
+WhatWeb identifies websites. It's goal is to answer the question, "What is that Website?". WhatWeb
+recognises web technologies including content management systems (CMS), blogging platforms, statis‐tic/analytics  packages,  JavaScript libraries, web servers, and embedded devices.
+
+I found this articale which is very important for pentester: https://geekflare.com/reconnaissance-exploit-search-tools/.
+
+Then we have gone to the website https://builtwith.com/ and put tesla.com in the search field.
+BuiltWith is a technology lookup(Nachschlagen) or profiler. It provides pentesters with real-time information of target via the domain API and domain live API. The domain API feeds pentesters with technical information such as analytics service, embedded plugins, frameworks, libraries, etc.
+
+
+
+
+
+
+2)Scanning and Enumeration(the more one enumeration the better off one is, hacking is all enumeration.) 
+	-Nmap, Nessus, Nikto, etc.
+
+3)Gaining Access
+
+4)Maintaining Access
+
+5)Covering Tracks

@@ -1,0 +1,27 @@
+Introductory Linux 
+	1) commands
+   		1)locate filename: this is used to find a file by its name in the data bank quickly(*/filename for the accurate file name).
+  		2)updatedb: this updates the databank if the currently added files should be found.
+		3)chmod option(one can type the option in oktal number like 777 or like u+x) filename:this is utilized to gives the right of read			   ing, writing or executing a file for someone, group or others.
+		4)adduser username: this command is used to create a new user with its own standard-home-directory.
+		5)su username: su stands for switch user und is used to switch user.		
+		6)ifconfig: this is used to get the ip-addresses.
+		7)iwconfig: this is used to get information about the wireless.
+		8)ping ip-address or URL: ping uses the ICMP protocol's mandatory ECHO_REQUEST datagram to elicit(hervorrufen/auslösen) an ICMP ECHO_RESPONSE from
+		 a host or gateway(ping -c(count) ip-address: this option determins how many ECHO-REQUEST datagrams(pings) should be sent).
+		9) arp -a: this command shows the current ARP table in the system. ARP stands for Address Resolution Protocol and is a procedure for mapping a dynamic IP address to a permanent physical machine address in a local area network (LAN). The physical machine address is also known as a media access control (MAC) address.	    10)netstat: this is used to list the open ports.
+		11)route:this is used to display the information of route table. 
+		12)impacket:Impacket is a collection of Python3 classes focused on providing access to network packets. Impacket allows Python3 developers to craft and decode network packets in simple and consistent manner. It includes support for low-level protocols such as IP, UDP and TCP, as well as higher-level protocols such as NMB and SMB.
+		By dafault the kali impacket is broke so man should get rid of it with the command " apt purge *impacket*" and get it from github into the directory /opt using "git clone https://github.com/fortra/impacket.git".
+In order to install this library one should use the command "python3 -m pip install ." in the directory impacket.
+		13)Turning on and off services on Kali:
+		"sevice apache2 start" one can starts the apache2 service, "service ssh start" one starts the ssh service, "service postgresql start" one st		    arts the postgresql service. In order to stop service, one has to use the word "stop" instead of the word "start": Note: when you use this c		ommand "service apache2 start" and turn your pc off all the services will go away.
+		If you want to let the services run automatically after turning your computer on,you have to use this command " systemctl enable service(lik		    e apache2).
+
+Impacket is highly effective when used in conjunction with a packet capture utility or package such as Pcapy. Packets can be constructed from scratch, as well as parsed from raw data. Furthermore, the object oriented API makes it simple to work with deep protocol hierarchies.
+		14) cat ip.txt | grep "64 bytes" | cut -d " " -f 4 | tr -d ":": this set of commands is used to display the ip addresses of the computer that are up from the ip.txt where these ip addresse are saved after pinging.		    15) for ip in §(cat iplist.txt); do nmap -p 80 -T4 $ip & done:
+	2)important files in linux system for pentester(what is important is that the file /etc/passwd contains the users and the file /etc/shadow contai			ns the password in hash.
+		1)/etc/passwd: this is file which contains information about the users in the system like Name:Password:User-ID:Group-ID:comment:				home directory:shell.	
+
+		2)/etc/shadow: this is a file which stands in relation with the file /etc/passwd and contains the following information:
+Name:Pass:DOC(day of the last change, 01.01.1970 this date is used to determine how old a password is):MinTag:MaxTag:Warn:DeaktivIn:DeaktivSeit:Frei 

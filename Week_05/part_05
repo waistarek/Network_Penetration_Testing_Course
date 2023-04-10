@@ -1,0 +1,74 @@
+         Scanning Tools & Tactics
+
+
+1) TCP vs UDP
+
+TCP: 
+	-Connection-oriented
+	-Has a handshake
+	-Used on applications requiring high reliability
+	-Examples: HTTP, FTP, Telnet
+
+UDP:
+
+	-Connectionless
+	-No handshake
+	-Used on applications requiring a fast connection
+	-Ecamples: DNS, DHCP, SNMP
+
+2)The 3-Way Handshake
+ip1 sends a SYN  from its port x to the port y of the ip2.
+ip2 responses with a ACK to the received SYN from ip1.
+ip1replies with a ACK to the ACK of ip2. 
+The conndection is established.
+
+Scanning Tools & Tactics
+
+1) Nmap, the acronym for Network Mapper, is an open-source security auditing and network scanning software designed by Gordon Lyon. It is developed in such a way that it can quickly analyze massive networks as well as single hosts.
+	a) TCP Scanning:
+	-command: nmap -sn 192.168.40.54/24.The output of this command would be all the ip-addresses on this netowrk which are up.
+	-command: nmap -T4 192.168.40.54.The T is for the speed, we could put T1 to T5.The higher the number behind T is, the faster is the scanning.The faster you scan the more likely you gonna miss something and perhaps be detected.(TCP scanning)
+	-command: nmap -T4 192.168.0.102: The output of this command contains all the services, the posrts and their state.
+	-command: nmap -T4 -A -p- 192.168.0.102: With -A we could get information about OS detection, version detection, script scanning, and traceroute. The option -p- is for all ports on TCP.
+
+	-Tacktic called Staging(first scanning quickly and then scanning more technically): Instead of scanning with the option -A which would take a lot of time it is faster to run the command 'nmap -T4 -p- 192.168.0.102' and look which ports are open and we concentrate on them using the command nmap -T4 -p53,80,22,443,514 192.168.0.102. 53,80,22,443,514 are the open ports.
+	-command: nmap -T4 -p- 192.168.0.102 -oA client: the option -oA followed by a word will store the output of the whole command into three files called word( in this case called client) in format client.gnmap, client.nmap and client.xml.
+	b)UDP Scanning:
+	-command: nmap -sU -T4 192.168.0.102:this command allwos us to scan the 1000 common ports. If we want to scann 65535 ports it will take houres.UDP Scanning is imprtant but hardly trust.
+
+-command: ls /usr/share/nmap/scripts. It will show all scripts that provided by nmap.
+-command: nmap -p 443 --script=all/ nmap -p 443 --script=ssl-enum-ciphers tesla.com: The first command would run all scripts of network mapper(nmap) with the key word 'all'. The second command runs just the script called ssl-enum-ciphers.nse
+on the website tesla. The output is the ciphers tesla uses.
+
+2) Nessus:
+Ciphers, also called encryption algorithms, are systems for encrypting and decrypting data. A cipher converts the original message, called plaintext, into ciphertext using a key to determine how it is done.
+
+2Then we went to the website https://de.tenable.com/products/nessus/nessus-essentials and signed up with the email tarek.wais@student.hs-rm.de and we downloaded the file 'Nessus-10.5.0-ubuntu1404_amd64.deb' into the directory Week_05 and we run the command ' sudo dpkg -i Nessus-10.5.0-ubuntu1404_amd64.deb' in this directory.
+
+The Activation Code is: G9S8-S59X-UHUQ-ZWFF-XDZT.
+Later we started nessus with the command '/bin/systemctl start nessusd.service' and then we went to the website https://kali-Lenovo:8834/ to configure the scanner.
+Nessus is an open-source network vulnerability scanner that uses the Common Vulnerabilities and Exposures architecture for easy cross-linking between compliant security tools. Nessus employs the Nessus Attack Scripting Language (NASL), a simple language that describes individual threats and potential attacks.
+
+We started metasploit with the command: msfconsole.
+The Metasploit framework is a very powerful tool which can be used by cybercriminals as well as ethical hackers to probe systematic vulnerabilities on networks and servers. Because it’s an open-source framework, it can be easily customized and used with most operating systems.
+In order to search a string that a module contains you could type 'search string'.
+We searched the moudles containing the word portscan with the command:search portscan.
+In oder to utilize a module one should use the following command: use moduleName.
+Command: use  auxiliary/scanner/portscan/syn.TO get information about what a module about is you just going into it using use ModuleName and type 'info'.
+Type 'options' to get the options and the current settings of the that module.
+To adjust the settings use please 'set optionName newValue' for example:set ports 1-65535, set rhosts ip1 ip2(set rhost 192.168.0.102(rhost for a ip and rhosts for more than one)).
+To start scanning you type 'exploit or run'.Then it would show how many ports are open and close.
+If you want to see the possiblities you can uzilize with the keyword 'use' all you have to type is 'use doubleClicksOnTab'.
+
+3)Nikto:
+Nikto is a free software command-line vulnerability scanner that scans webservers for dangerous files/CGIs, outdated server software and other problems.
+Command: nikto -h tesla.com. h stands for host.
+
+
+
+4)Burp Suite:
+
+Burp Suite is an integrated platform/graphical tool for performing security testing of web applications. Its various tools work seamlessly together to support the entire testing process, from initial mapping and analysis of an application's attack surface, through to finding and exploiting security vulnerabilities.
+Burp Suite comes with kali installed.
+
+Ende
